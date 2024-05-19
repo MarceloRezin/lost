@@ -12,8 +12,14 @@ main:
 	mov ss, ax
 	mov sp, [ORIGEM]
 
+wait_func:
+	mov ah, 0x86
+	mov cx, 0x001e ;h word
+	mov dx, 0x8480 ;l word
+	int 0x15 ;wait int
+
 clear_screen:
-	mov al, 0x03
+	mov ax, 0x0003
 	int 0x10
 
 print_str:
