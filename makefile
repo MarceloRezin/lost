@@ -1,5 +1,8 @@
+ASM_FILE=boot.asm
+#ASM_FILE=jogo_adivinhacao.asm
+
 make:
-	nasm boot.asm -f bin -o boot.bin
+	nasm $(ASM_FILE) -f bin -o boot.bin
 	cp boot.bin boot.img
 	truncate -s 1440k boot.img
 
